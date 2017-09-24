@@ -1,0 +1,190 @@
+/* modification on default bootstrap CSS */
+
+/* Bootstrap Button */
+.btn-primary {
+  background-color: #FC2046;
+  border: #FC2046;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #7F0F22;
+  border-color: #7F0F22; /*set the color you want here*/
+}
+
+/* Bootstrap Navbar */
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:visited {
+  color: #FFFFFF;
+}
+
+.navbar-default, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:visited, .navbar-default .navbar-nav>li>a {
+  color: #FFFFFF;
+}
+
+.navbar-brand {
+  height: 100px;
+  width: 200px;
+} 
+
+.navbar-default {
+  background-color: #FC2046;
+  border: #FC2046;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  background-color: #7F0F22;
+}
+
+.navbar-fixed-left {
+  width: 200px;
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+}
+
+.navbar-fixed-left .navbar-nav > li {
+  float: none;  /* Cancel default li float: left */
+  width: 200px;
+}
+
+.navbar-fixed-left + .container {
+  padding-left: 200px;
+}
+
+.nav>li>a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar-nav {
+  margin: auto;
+  padding: auto;
+}
+
+/* Custom CSS */
+
+/* Login.jsx */
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+.bounding {
+  display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align:center;
+}
+
+.login {
+  justify-content: center;
+  padding-top: 100px; 
+}
+
+.item {
+  width: 250px;
+}
+
+.red-text {
+  color: #FC2046;
+}
+
+.send {
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #079AC7;
+}
+
+.viewPane {
+  background-color: #EEEEEE;    
+  padding-left: 200px;
+}
+
+/* Message.jsx */
+.message-box {
+  top: 0px;
+  margin:0px;
+  padding: 0px 2px 2px 3px;    
+  border-width: 2px;
+  width: 100%;
+  /* Firefox */
+  height: -moz-calc(100vh - 200px);
+  /* WebKit */
+  height: -webkit-calc(100vh - 200px);
+  /* Opera */
+  height: -o-calc(100vh - 200px);
+  /* Standard */
+  height: calc(100vh - 200px);
+  overflow: auto;
+}
+
+.message-balloon {
+  border-radius: 25px;
+  width: auto;
+  max-width: 300px;
+  margin: 10px;
+  padding: 10px 10px 10px 10px;
+  overflow-wrap: break-word;   
+  clear:both;    
+}
+
+.message-group {
+  clear:both;    
+}
+
+.my-message {
+  color: white;
+  background-color: #FC2046;
+  float: right;
+}
+
+.other-message {
+  color: black;
+  background-color: white;
+  float: left;
+}
+
+.other-message-name {
+  color: grey;
+}
+
+/* Left.jsx */
+.navbar-sub-brand {
+  font-size: 0.6em;
+}
+
+/* Top.jsx */
+.top {
+  justify-content: center;
+  height: 100px;
+  display: inline-block;
+  padding-top: 20px;
+  border-bottom: 2px #CCCCCC solid;
+  background-color: #fff;
+}
+
+.top-name {
+  color: grey;
+  font-size: 1.5em;
+}
+
+.bottom {
+  height: 100px;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 30vw;;
+  height: 100px; 
+  width: 100%;
+  position: absolute;
+  left: 200px;
+  bottom: 0;
+  background-color: #fff;
+  border-top: 2px #CCCCCC solid;
+}
