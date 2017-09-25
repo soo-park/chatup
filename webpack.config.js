@@ -1,9 +1,9 @@
 var path = require('path');
 var SRC_DIR = path.join(__dirname, '/public/src');
-var DIST_DIR = path.join(__dirname, '/public');
+var DIST_DIR = path.join(__dirname, '/public/dist');
 
 module.exports = {
-  entry: `${DIST_DIR}/index.js`,
+  entry: `${SRC_DIR}/index.js`,
   output: {
     filename: 'bundle.js',
     path: DIST_DIR

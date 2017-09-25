@@ -4,7 +4,6 @@ import Top from './Top.js';
 import Messages from './Messages.js';
 import Bottom from './Bottom.js';
 
-
 class Body extends React.Component {
   constructor(props) {
     super(props);
@@ -30,14 +29,15 @@ class Body extends React.Component {
 
   render () {
     return (
-      <div>
-        <Left userName={this.state.userName} roomId={this.state.roomId} handleRoomChange={this.handleRoomChange.bind(this)}/>
-        <div className="viewPane">
-          <Top userName={this.state.userName} roomId={this.state.roomId} />
-          <Messages roomId={this.state.roomId} userId={this.state.userId} userName={this.state.userName}/>
-          <Bottom />          
+        <div>
+          <Left userName={this.state.userName} roomId={this.state.roomId} handleRoomChange={this.handleRoomChange.bind(this)}/>
+          <div className="viewPane">
+            <Top userName={this.state.userName} roomId={this.state.roomId} />
+            <Messages roomId={this.state.roomId} userId={this.state.userId} userName={this.state.userName}/>
+            <Bottom />          
+          </div>
         </div>
-      </div>
+
     )
   }
 }
