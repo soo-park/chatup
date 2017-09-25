@@ -1,11 +1,10 @@
-import {combineReducers} from 'redux';
-import chats from './messageReducer';
+import { combineReducers } from 'redux';
+import app from './appReducer.js';
+import messages from './messagesReducer.js';
 
 const rootReducer = combineReducers({
-  chats
+  app,
+  messages
 });
-
-// chat: chats // short hand property name in ES 6
-// state.chats can be used if the property name is set chat
 
 export default rootReducer;

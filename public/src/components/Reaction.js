@@ -12,7 +12,6 @@ class Reaction extends React.Component {
     // FIXME: mouse change on to arrow
     // FIXME: CSS for the reaction
     // V2: balloon reactions
-    console.log(this);
   }
 
   render() {  

@@ -1,18 +1,17 @@
-// import * as types from './actionTypes';
-// const api = "localhost:8080";
+import * as types from './actionTypes';
 
-// // action creator for chats
-// export function loadChatsSuccess(chats) {
-//   return { type: types.LOAD_CHATS_SUCCESS, chats };
-// }
+export function loadMessagesSuccess(messages) {
+  return { type: types.LOAD_MESSAGES_SUCCESS, messages };
+}
 
-// // Thunk for loading chats
-// export function loadChats() {
-//   return function(dispatch) {
-//     return api.getAllChats().then(chats => {
-//       dispatch(loadChatsSuccess(chats));
-//     }).catch(error => {
-//       throw(error);
-//     });
-//   };
-// }
+// Tunk for loading courses
+export function loadMessages(id) {
+  return function(dispatch) {
+    return fetch(`http://localhost:8080/api/rooms/${id}/messages`)
+    .then(response => response.json())
+    .then(json => {
+      return dispatch(loadMessagesSuccess(json));
+    })
+    .catch(error => error)
+  };
+}

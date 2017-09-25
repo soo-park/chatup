@@ -1,19 +1,16 @@
-import React from 'react';
-import Login from './Login.js';
-import Body from './Body.js';
-
 import 'babel-polyfill';
-import { Router, browserHistory } from 'react-router';
-import routes from '../common/routes';
-
+import React from 'react';
 import configureStore from '../store/configureStore.js';
 import { Provider } from 'react-redux';
-// import { loadChats } from './actions/messagesActions.js';
+import { Router, browserHistory } from 'react-router';
+import routes from './navigation/routes';
+import Login from './Login.js';
+import Body from './Body.js';
+import { loadMessages } from '../actions/messagesActions.js';
 
 const store = configureStore();
-// store.dispatch(loadChats());
+store.dispatch(loadMessages(0));
 
-// FIXME: implement redux for better state management
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -23,6 +20,7 @@ class App extends React.Component {
       userId: null,
       messages: []
     }
+    console.log("this.props in app.js: ", this.props);
   }
   
   handleViewChange(viewName, userName, userId) {
