@@ -1,5 +1,5 @@
 import React from 'react';
-import Message from './Message.jsx';
+import Message from './Message.js';
 
 
 class Messages extends React.Component {
@@ -23,7 +23,7 @@ class Messages extends React.Component {
         })
       },
       error: (err) => {
-        console.log('err making call for rooms in Left.jsx', err);
+        console.log('err making call for rooms in Left.js', err);
       }
     });
   }

@@ -1,8 +1,8 @@
 import React from 'react';
-import Left from './Left.jsx';
-import Top from './Top.jsx';
-import Messages from './Messages.jsx';
-import Bottom from './Bottom.jsx';
+import Left from './Left.js';
+import Top from './Top.js';
+import Messages from './Messages.js';
+import Bottom from './Bottom.js';
 
 
 class Body extends React.Component {
@@ -34,8 +34,8 @@ class Body extends React.Component {
         <Left userName={this.state.userName} roomId={this.state.roomId} handleRoomChange={this.handleRoomChange.bind(this)}/>
         <div className="viewPane">
           <Top userName={this.state.userName} roomId={this.state.roomId} />
-          <Messages roomId={this.state.roomId} socket={this.props.socket} userId={this.state.userId} userName={this.state.userName}/>
-          <Bottom socket={this.props.socket} />          
+          <Messages roomId={this.state.roomId} userId={this.state.userId} userName={this.state.userName}/>
+          <Bottom />          
         </div>
       </div>
     )

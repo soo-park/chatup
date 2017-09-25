@@ -48,7 +48,7 @@ class Left extends React.Component {
         })
       },
       error: (err) => {
-        console.log('err making call for rooms in Left.jsx', err);
+        console.log('err making call for rooms in Left.js', err);
       }
     });
   }

@@ -63,7 +63,7 @@
 
 /* Custom CSS */
 
-/* Login.jsx */
+/* Login.js */
 html {
   height: 100%;
 }
@@ -107,7 +107,7 @@ body {
   padding-left: 200px;
 }
 
-/* Message.jsx */
+/* Message.js */
 .message-box {
   top: 0px;
   margin:0px;
@@ -155,12 +155,12 @@ body {
   color: grey;
 }
 
-/* Left.jsx */
+/* Left.js */
 .navbar-sub-brand {
   font-size: 0.6em;
 }
 
-/* Top.jsx */
+/* Top.js */
 .top {
   justify-content: center;
   height: 100px;

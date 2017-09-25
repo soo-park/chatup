@@ -2,8 +2,6 @@ import React from 'react';
 
 
 function handleMessageSend(e, props) {
-  // console.log(props, "is the props in the Bottom");
-  var socket = props.socket;
 
   e.preventDefault();
   var input = $(".message").val();
@@ -21,8 +19,6 @@ function handleMessageSend(e, props) {
     $(".message-balloon")[$(".message-balloon").length-1].scrollIntoView({ behaviour: 'smooth' });
     $(".message").val('');
 
-    // FIXME: appending using socket.io
-    socket.emit('chat message', input);
   }
 }
 

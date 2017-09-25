@@ -1,0 +1,1 @@
+export const LOAD_CHAT_SUCCESS = 'LOAD_CHAT_SUCCESS';

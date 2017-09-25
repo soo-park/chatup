@@ -1,8 +1,6 @@
 import React from 'react';
-import Login from './components/Login.jsx';
-import Body from './components/Body.jsx';
-import io from 'socket.io-client';
-var socket = io();
+import Login from './components/Login.js';
+import Body from './components/Body.js';
 
 // FIXME: implement redux for better state management
 class App extends React.Component {
@@ -15,7 +13,6 @@ class App extends React.Component {
       messages: []
     }
   }
-
   
   handleViewChange(viewName, userName, userId) {
     this.setState({
@@ -28,7 +25,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        {this.state.view === 'login' ? <Login changeView={this.handleViewChange.bind(this)}/> : <Body status={this.state} socket={socket} />}
+        {this.state.view === 'login' ? <Login changeView={this.handleViewChange.bind(this)}/> : <Body status={this.state} />}
       </div>
     )
   }

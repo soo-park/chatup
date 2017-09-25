@@ -1,5 +1,5 @@
 import React from 'react';
-import Reaction from './Reaction.jsx';
+import Reaction from './Reaction.js';
 
 class Message extends React.Component {
   constructor(props) {
