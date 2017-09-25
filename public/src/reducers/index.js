@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux';
-import courses from './courseReducer';
+import chats from './chatReducer';
 
 const rootReducer = combineReducers({
-  courses
+  chats
 });
 
-// course: courses // short hand property name in ES 6
-// state.courses can be used if the property name is set course
+// chat: chats // short hand property name in ES 6
+// state.chats can be used if the property name is set chat
 
 export default rootReducer;

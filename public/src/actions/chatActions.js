@@ -1,15 +1,15 @@
 import * as types from './actionTypes';
-import courseApi from '../api/mockCourseApi';
+import chatApi from '../api/mockChatApi';
 
-export function loadCoursesSuccess(courses) {
-  return { type: types.LOAD_COURSES_SUCCESS, courses };
+export function loadChatsSuccess(chats) {
+  return { type: types.LOAD_CHAT_SUCCESS, chats };
 }
 
-export function loadCourses() {
+export function loadChats() {
   return function(dispatch) {
-    return courseApi.getAllCourses().then(courses => {
-      // dispatchEvent(loadCoursesSuccess(courses));
-      dispatch(loadCoursesSuccess(courses));
+    return chatApi.getAllChats().then(chats => {
+      // dispatchEvent(loadChatsSuccess(chats));
+      dispatch(loadChatsSuccess(chats));
     }).catch(error => {
       throw(error);
     });
