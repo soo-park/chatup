@@ -1,13 +1,14 @@
 import React from 'react';
-import $ from 'jquery';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+// import * as loginActions from '../actions/loginActions';
 
 
 class Login extends React.Component {
-  constructor(props) {
+  constructor(props, context) {
     super(props);
     this.handleUsername = this.handleUsername.bind(this); 
   }
-
 
   handleUsername(e) {
     e.preventDefault();
@@ -21,7 +22,6 @@ class Login extends React.Component {
     }
   }
 
-
   render () {
     return (
       <div className="bounding login">
@@ -34,5 +34,20 @@ class Login extends React.Component {
   }
 }
 
+// function mapStateToProps(state, ownProps) {
+
+//   return {
+//     userName: userName,
+//     authors: authorsFormattedForDropdown  
+//   };
+// }
+
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     actions: bindActionCreators(courseActions, dispatch)
+//   };
+// }
+
+// export default connect(mapStateToProps, mapDispatchToProps)(Login);
 
 export default Login;

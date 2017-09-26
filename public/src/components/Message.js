@@ -1,13 +1,12 @@
 import React from 'react';
 import Reaction from './Reaction.js';
 
+
 class Message extends React.Component {
   constructor(props) {
     super(props);
   }
-
   
-
   scrollToBottom() {
     this.el.scrollIntoView({ behaviour: 'smooth' });
   }
@@ -42,6 +41,5 @@ class Message extends React.Component {
     )
   }
 }
-
 
 export default Message;

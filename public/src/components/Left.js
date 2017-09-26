@@ -1,64 +1,24 @@
 import React from 'react';
-import $ from 'jquery';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as roomsActions from '../actions/roomsActions.js';
+import handleTime from './helper/time.js';
 import { Link } from 'react-router';
 
+
 class Left extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = null;
+  constructor(props, context) {
+    super(props, context);
   }
-
-
-  handleTime() {
-    var time = new Date().getTime() / 1000;
-    var currentTime = time;
-    var timeSpent = 0;
-
-    var secondsToTime = (time) => {
-      var days = Math.floor(time / 86400);
-      var hours = Math.floor((time - (days * 86400 ))/3600);
-      var minutes = Math.floor((time - (days * 86400 ) - (hours *3600 ))/60);
-      var secs = Math.floor((time - (days * 86400 ) - (hours *3600 ) - (minutes*60)));
-
-      if (days === 0 && hours === 0 && minutes === 0) {
-        return secs + " seconds passed";
-      } else {
-        days !== 0 ? days = days + " days " : "";
-        hours !== 0 ? hours = hours + " hours " : "";  
-        return days + hours + minutes + " minutes passed";      
-      }
-    };
-    
-    
-    setInterval(function(){
-      var currentTime = new Date().getTime() / 1000;
-      timeSpent = secondsToTime(currentTime - time);
-      $(".time").html(timeSpent);
-    }, 1000);   
-  }
-
 
   componentDidMount() {
-    this.handleTime();
-    $.ajax({
-      url: 'http://localhost:8080/api/rooms', 
-      success: (data) => {
-        this.setState({
-          rooms: data
-        })
-      },
-      error: (err) => {
-        console.log('err making call for rooms in Left.js', err);
-      }
-    });
+    handleTime();
   }
-
 
   handleClick(e, id) {
     e.preventDefault();
     this.props.handleRoomChange(id);
   }
-
 
   render () {
     return (
@@ -68,11 +28,23 @@ class Left extends React.Component {
           <span className="navbar-sub-brand time">Elapsed time</span>
         </div>
         <ul className="nav navbar-nav">
-          {this.state ? this.state.rooms.map(item => <li key={item.id}><a href="#" onClick={(e)=> {this.handleClick(e, item.id)}}>{item.name}</a></li>) : "Loading"}
+          {this.props ? this.props.rooms.map(item => <li key={item.id}><a href="#" onClick={(e)=> {this.handleClick(e, item.id)}}>{item.name}</a></li>) : "Loading"}
         </ul>
         </div>
       )
     }
   }
+
+  function mapStateToProps(state, ownProps) {
+    return {
+      rooms: state.rooms
+    };
+  }
   
-  export default Left;
+  function mapDispatchToProps(dispatch) {
+    return {
+      actions: bindActionCreators(roomsActions, dispatch)
+    };
+  }
+
+  export default connect(mapStateToProps, mapDispatchToProps)(Left);

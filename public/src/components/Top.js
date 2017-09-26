@@ -1,4 +1,7 @@
 import React from 'react';
+// import { connect } from 'react-redux';
+// import { bindActionCreators } from 'redux';
+// import * as currentRoomActions from '../actions/currentRoomActions.js';
 
 
 class Top extends React.Component {
@@ -51,4 +54,17 @@ class Top extends React.Component {
 }
 
 
+// function mapStateToProps(state, ownProps) {
+//   return {
+//     currentRoom: state.currentRoom
+//   };
+// }
+
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     actions: bindActionCreators(currentRoomActions, dispatch)
+//   };
+// }
+
+// export default connect(mapStateToProps, mapDispatchToProps)(Top);
 export default Top;

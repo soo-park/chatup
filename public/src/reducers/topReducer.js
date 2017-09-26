@@ -2,11 +2,11 @@ import * as types from '../actions/actionTypes';
 import initialState from './initialState';
 
 
-export default function messagesReducer (state = initialState.messages, action) {
+export default function roomsReducer (state = initialState.currentRoom, action) {
   switch (action.type) {
-    case types.LOAD_MESSAGES_SUCCESS:
-      return action.messages;
-  
+    case types.CURRENT_ROOM_SUCCESS:
+    return action.currentRoom;
+    
     default: 
       return state;
   }

@@ -22,7 +22,6 @@ function handleMessageSend(e, props) {
   }
 }
 
-
 const Bottom = (props) => (
   <footer className="bottom bounding">
     <input type="text" name="message" placeholder="Type a message..." className="message form-control" />

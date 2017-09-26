@@ -1,15 +1,12 @@
 import 'babel-polyfill';
 import React from 'react';
-import configureStore from '../store/configureStore.js';
-import { Provider } from 'react-redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Router, browserHistory } from 'react-router';
-import routes from './navigation/routes';
 import Login from './Login.js';
 import Body from './Body.js';
-import { loadMessages } from '../actions/messagesActions.js';
+import * as appActions from '../actions/appActions.js';
 
-const store = configureStore();
-store.dispatch(loadMessages(0));
 
 class App extends React.Component {
   constructor(props) {
@@ -18,29 +15,40 @@ class App extends React.Component {
       view: 'login',
       userName: null,
       userId: null,
-      messages: []
+      messages: [],
+      rooms: []
     }
-    console.log("this.props in app.js: ", this.props);
   }
   
   handleViewChange(viewName, userName, userId) {
     this.setState({
       view: viewName,
       userName: userName,
-      userId: userId
+      userId: userId,
+      messages: [],
+      rooms: []
     });
   }
 
   render () {
     return (
-      <Provider store={store}>            
-        <div>
-          {this.state.view === 'login' ? <Login changeView={this.handleViewChange.bind(this)}/> : <Body status={this.state} />}
-        </div>
-      </Provider>
+      <div>
+        {this.state.view === 'login' ? <Login changeView={this.handleViewChange.bind(this)}/> : <Body status={this.state} />}
+      </div>
     )
   }
 }
 
+function mapStateToProps(state, ownProps) {
+  return {
+    view: state.view
+  };
+}
 
-export default App;
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(appActions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

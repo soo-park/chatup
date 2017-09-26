@@ -3,5 +3,8 @@ export default {
   userName: null,
   userId: null,
   messages: [],
-  roomId: null
+  roomId: null,
+  rooms: [{name: "Redux", id: 2}],
+  users: [],
+  currentRoom: {}
 };
