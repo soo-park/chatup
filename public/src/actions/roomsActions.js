@@ -9,7 +9,6 @@ export function loadRooms() {
     return fetch(`http://localhost:8080/api/rooms`)
     .then(response => response.json())
     .then(json => {
-      console.log("rooms in roomsActions", json)
       return dispatch(loadRoomsSuccess(json));
     })
     .catch(error => error)

@@ -11,13 +11,8 @@ import * as appActions from '../actions/appActions.js';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      view: 'login',
-      userName: null,
-      userId: null,
-      messages: [],
-      rooms: []
-    }
+    this.state = Object.assign({}, props.allState);
+    this.handleViewChange = this.handleViewChange.bind(this);
   }
   
   handleViewChange(viewName, userName, userId) {
@@ -33,7 +28,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        {this.state.view === 'login' ? <Login changeView={this.handleViewChange.bind(this)}/> : <Body status={this.state} />}
+        {this.props.children}
       </div>
     )
   }
@@ -41,7 +36,7 @@ class App extends React.Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    view: state.view
+    allState: state
   };
 }
 

@@ -1,23 +1,9 @@
 import React from 'react';
 
-
-class Reaction extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      reaction: '+'
-    }
-  }  
-
-  handleReaction() {
-    // FIXME: mouse change on to arrow
-    // FIXME: CSS for the reaction
-    // V2: balloon reactions
-  }
-
-  render() {  
-    return (<div className="reaction" onClick={this.handleReaction.bind(this)}>  +  </div>);
-  }
+const Reaction = ({reaction}) => {
+  return (
+    <div className="reaction" onClick={() => console.log("handleReaction")}>  +  </div>
+  );
 }
 
 export default Reaction;

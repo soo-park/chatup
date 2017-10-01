@@ -25,15 +25,20 @@ class Left extends React.Component {
       <div className="navbar navbar-default navbar-fixed-left">
         <div className="navbar-brand" href="#">
           <span>{this.props.userName}</span><br />
-          <span className="navbar-sub-brand time">Elapsed time</span>
+          <span className="navbar-sub-brand" id="time">Elapsed time</span>
         </div>
         <ul className="nav navbar-nav">
-          {this.props ? this.props.rooms.map(item => <li key={item.id}><a href="#" onClick={(e)=> {this.handleClick(e, item.id)}}>{item.name}</a></li>) : "Loading"}
+          {/* {this.props ? this.props.rooms.map(item => <li key={item.id}><a href="#" onClick={(e)=> {this.handleClick(e, item.id)}}>{item.name}</a></li>) : "Loading"} */}
+          {this.props ? this.props.rooms.map(item => <li key={item.id}><Link to='/chat'>{item.name}</Link></li>) : "Loading"}
         </ul>
         </div>
       )
     }
   }
+
+  Left.propTypes = {
+    rooms: React.PropTypes.array.isRequired
+  };
 
   function mapStateToProps(state, ownProps) {
     return {

@@ -21,6 +21,6 @@ export default function handleTime() {
   setInterval(function(){
     var currentTime = new Date().getTime() / 1000;
     timeSpent = secondsToTime(currentTime - time);
-    $(".time").html(timeSpent);
+    document.getElementById("time").innerHTML = timeSpent;
   }, 1000);   
 };

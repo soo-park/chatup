@@ -1,6 +1,6 @@
 export default {
   view: 'login',
-  userName: null,
+  userName: '',
   userId: null,
   messages: [],
   roomId: null,

@@ -19,7 +19,7 @@ store.dispatch(currentRoom(0));
 ReactDOM.render((
   <Provider store={store}>
     <Router history={browserHistory} routes={routes}>
-      <App />
+      <App store={store}/>
     </Router>
   </Provider>
     

@@ -7,5 +7,5 @@ export function loginSuccess(view) {
 export function login(view) {
   return function(dispatch) {
       dispatch(loginSuccess(view));
-  }
+  };
 }

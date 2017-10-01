@@ -7,6 +7,7 @@ import Body from './components/Body.js';
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={Login} />
-    <Route path="chat" component={Body} />
+    <Route path="chat" component={Body} userName="Nick"/>
+    <Route path="chat/:id" component={Body}/>
   </Route>
 );

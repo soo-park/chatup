@@ -16,7 +16,6 @@ class Messages extends React.Component {
   }
 
   render () {
-    console.log("messages props", this.props)
     return (
       <div className="message-box">
         {this.props.messages.length !== 0 ? this.props.messages.map(item => <Message item={item} key={item.id} userId={this.props.userId}/>): ""}
