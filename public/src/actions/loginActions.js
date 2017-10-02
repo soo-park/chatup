@@ -6,6 +6,6 @@ export function loginSuccess(userName) {
 
 export function login(userName) {
   return function(dispatch) {
-      dispatch(loginSuccess(userName));
-  }
+    return dispatch(loginSuccess(userName));
+ };
 }

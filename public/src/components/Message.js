@@ -1,7 +1,6 @@
 import React from 'react';
 import Reaction from './Reaction.js';
 
-
 class Message extends React.Component {
   constructor(props) {
     super(props);

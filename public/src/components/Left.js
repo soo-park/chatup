@@ -1,10 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as roomsActions from '../actions/roomsActions.js';
 import handleTime from './helper/time.js';
 import { Link } from 'react-router';
-
 
 class Left extends React.Component {
   constructor(props, context) {
@@ -31,25 +27,9 @@ class Left extends React.Component {
           {/* {this.props ? this.props.rooms.map(item => <li key={item.id}><a href="#" onClick={(e)=> {this.handleClick(e, item.id)}}>{item.name}</a></li>) : "Loading"} */}
           {this.props ? this.props.rooms.map(item => <li key={item.id}><Link to='/chat'>{item.name}</Link></li>) : "Loading"}
         </ul>
-        </div>
-      )
-    }
+      </div>
+    )
   }
-
-  Left.propTypes = {
-    rooms: React.PropTypes.array.isRequired
-  };
-
-  function mapStateToProps(state, ownProps) {
-    return {
-      rooms: state.rooms
-    };
-  }
+}
   
-  function mapDispatchToProps(dispatch) {
-    return {
-      actions: bindActionCreators(roomsActions, dispatch)
-    };
-  }
-
-  export default connect(mapStateToProps, mapDispatchToProps)(Left);
+export default Left;

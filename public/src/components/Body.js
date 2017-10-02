@@ -1,12 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { Router, browserHistory } from 'react-router';
-import Left from './Left.js';
-import Top from './Top.js';
-import Messages from './Messages.js';
+import LeftContainer from '../containers/leftContainer.js';
+import TopContainer from '../containers/topContainer.js';
+import MessagesContainer from '../containers/messagesContainer.js';
 import Bottom from './Bottom.js';
-import * as appActions from '../actions/appActions.js';
 
 class Body extends React.Component {
   constructor(props) {
@@ -23,13 +19,18 @@ class Body extends React.Component {
     this.setState({ roomId : id });    
   }
 
+  handleAddPost(nextState, replaceState) {
+    console.log(nextState.location.state.method) // 'POST'
+    console.log(nextState.location.state.body) // {comment: '...'}
+  }
+
   render () {
     return (
         <div>
-          <Left userName={this.props.userName} roomId={this.props.roomId} handleRoomChange={this.handleRoomChange.bind(this)}/>
+          <LeftContainer userName={this.props.userName} roomId={this.props.roomId} handleRoomChange={this.handleRoomChange.bind(this)}/>
           <div className="viewPane">
-            <Top userName={this.props.userName} roomId={this.props.roomId} />
-            <Messages roomId={this.props.roomId} userId={this.props.userId} userName={this.props.userName}/>
+            <TopContainer userName={this.props.userName} roomId={this.props.roomId} />
+            <MessagesContainer roomId={this.props.roomId} userId={this.props.userId} userName={this.props.userName}/>
             <Bottom />          
           </div>
         </div>
@@ -38,16 +39,4 @@ class Body extends React.Component {
   }
 }
 
-function mapStateToProps(state, ownProps) {
-  return {
-    view: state.view
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(appActions, dispatch)
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Body);
+export default Body;

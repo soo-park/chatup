@@ -4,7 +4,6 @@ export function loadMessagesSuccess(messages) {
   return { type: types.LOAD_MESSAGES_SUCCESS, messages };
 }
 
-// Tunk for loading courses
 export function loadMessages(id) {
   return function(dispatch) {
     return fetch(`http://localhost:8080/api/rooms/${id}/messages`)

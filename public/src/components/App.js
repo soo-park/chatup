@@ -1,12 +1,4 @@
-import 'babel-polyfill';
 import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { Router, browserHistory } from 'react-router';
-import Login from './Login.js';
-import Body from './Body.js';
-import * as appActions from '../actions/appActions.js';
-
 
 class App extends React.Component {
   constructor(props) {
@@ -34,16 +26,4 @@ class App extends React.Component {
   }
 }
 
-function mapStateToProps(state, ownProps) {
-  return {
-    allState: state
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(appActions, dispatch)
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

@@ -1,12 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as loginActions from '../actions/loginActions';
-import { Redirect, Link } from 'react-router';
+import { Link } from 'react-router';
 
 
 class Login extends React.Component {
-  constructor(props, context) {
+  constructor(props) {
     super(props);
     this.handleUsername = this.handleUsername.bind(this); 
   }
@@ -17,6 +14,9 @@ class Login extends React.Component {
     var userId = "yy35578";
     if(!input) {
       console.log("username not entered");
+    } else {
+      // update redux store
+      console.log(this.props.userName);
     }
   }
 
@@ -43,16 +43,4 @@ class Login extends React.Component {
   }
 }
 
-function mapStateToProps(state, ownProps) {
-  return {
-    userName: state.userName  
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(loginActions, dispatch)
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default Login;

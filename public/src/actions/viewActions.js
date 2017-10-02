@@ -1,11 +1,11 @@
 import * as types from './actionTypes';
 
-export function loginSuccess(view) {
+export function setViewSuccess(view) {
   return { type: types.VIEW_CHANGE, view };
 }
 
-export function login(view) {
+export function setView(view) {
   return function(dispatch) {
-      dispatch(loginSuccess(view));
-  };
+    return dispatch(setViewSuccess(view));
+ };
 }
