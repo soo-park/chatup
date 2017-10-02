@@ -1,10 +1,7 @@
 export default {
-  view: 'login',
-  userName: '',
-  userId: null,
+  view: '',
   messages: [],
-  roomId: null,
-  rooms: [{name: "Redux", id: 2}],
-  users: [],
-  currentRoom: {}
+  rooms: [],
+  currentRoom: {},
+  userName: ''
 };

@@ -14,8 +14,9 @@ class Login extends React.Component {
     if(!input) {
       console.log("username not entered");
     } else {
-      // update redux store
-      console.log("props in Login", this.props);
+      // update state & pass it through the Router
+      console.log("input in Login", input);
+      console.log(this.props.actions)
     }
   }
 
@@ -32,8 +33,7 @@ class Login extends React.Component {
  
           <Link to='/chat'
             className="btn btn-primary item"
-            onClick={e=> this.handleUsername(e)}
-          >
+            onClick={e=> this.handleUsername(e)}>
             Join the DoorDash Chat!
           </Link>
         </form>
