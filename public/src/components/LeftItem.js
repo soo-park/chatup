@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const LeftItem = ({item}) => {
-  var roomPath = "/chat/" + item.name;
+
+const LeftItem = (props) => {
+  var { item } = props;
+  function handleMenuClick(id) {
+    console.log("menu clicked");
+  }
+
   return (
-    <li key={item.id}><Link to={roomPath}>{item.name}</Link></li>
+    <li key={item.id} onClick={e=>handleMenuClick(item.id)}><a>{item.name}</a></li>
   );
 }
 

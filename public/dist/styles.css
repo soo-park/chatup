@@ -21,10 +21,6 @@
   color: #FFFFFF;
 }
 
-.navbar-brand {
-  height: 100px;
-  width: 200px;
-} 
 
 .navbar-default {
   background-color: #FC2046;
@@ -34,6 +30,11 @@
 .navbar-default .navbar-nav > li > a:hover {
   background-color: #7F0F22;
 }
+
+.navbar-brand {
+  height: 100px;
+  width: 200px;
+} 
 
 .navbar-fixed-left {
   width: 200px;
