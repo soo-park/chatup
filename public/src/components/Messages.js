@@ -1,10 +1,10 @@
 import React from 'react';
 import Message from './Message.js';
 
-const Messages = (props) => {
+const Messages = ({messages, userId}) => {
   return (
     <div className="message-box">
-      {props.messages.length !== 0 ? props.messages.map(item => <Message item={item} key={item.id} userId={props.userId}/>): ""}
+      {messages.length !== 0 ? messages.map(item => <Message item={item} key={item.id} userId={userId}/>): ""}
     </div>
   )
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +15,7 @@ class Login extends React.Component {
       console.log("username not entered");
     } else {
       // update redux store
-      console.log(this.props.userName);
+      console.log("props in Login", this.props);
     }
   }
 
