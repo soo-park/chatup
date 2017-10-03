@@ -1,5 +1,5 @@
 import React from 'react';
-import LeftItem from './LeftItem.js';
+import LeftItemContainer from '../containers/leftItemContainer.js';
 import calculateTimeElapsed from './helper/time.js';
 
 
@@ -21,7 +21,7 @@ class Left extends React.Component {
           <span className="navbar-sub-brand" id="time">Elapsed time</span>
         </div>
         <ul className="nav navbar-nav">
-          {rooms? rooms.map(item => <LeftItem key={item.id} item={item}/>) : "Loading"}
+          {rooms? rooms.map(item => <LeftItemContainer key={item.id} item={item}/>) : "Loading"}
         </ul>
       </div>
     )

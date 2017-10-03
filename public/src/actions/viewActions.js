@@ -9,3 +9,4 @@ export function setView(view) {
     return dispatch(setViewSuccess(view));
  };
 }
+
