@@ -1,5 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as loginActions from '../actions/loginActions';
+import { Redirect, Link } from 'react-router';
 
 class Login extends React.Component {
   constructor(props) {
@@ -14,13 +17,24 @@ class Login extends React.Component {
     if(!input) {
       console.log("username not entered");
     } else {
-      // update state & pass it through the Router
       console.log("input in Login", input);
-      console.log(this.props.actions)
+      var path = "/chat/" + input;
+      this.state.userName = 
     }
   }
 
+    handleViewChange(viewName, userName, userId) {
+    this.setState({
+      view: viewName,
+      userName: userName,
+      userId: userId,
+      messages: [],
+      rooms: []
+    });
+  }
+
   render () {
+    var input = this.refs.userName ? this.refs.userName.value : 'annonymous';    
     return (
       <div className="bounding login">
         <form>
@@ -31,7 +45,7 @@ class Login extends React.Component {
             className="form-control item"
             id="user" /><br/>
  
-          <Link to='/chat'
+          <Link to={path}
             className="btn btn-primary item"
             onClick={e=> this.handleUsername(e)}>
             Join the DoorDash Chat!
@@ -42,4 +56,17 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+function mapStateToProps(state, ownProps) {
+  return {
+    userName: state.userName  
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(loginActions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
+// export default Login;
