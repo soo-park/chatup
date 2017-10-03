@@ -11,30 +11,18 @@ class Login extends React.Component {
   }
 
   handleUsername(e) {
-    // e.preventDefault();
-    var input = this.refs.userName.value;
+    e.preventDefault();
+    var input = $("#user").val();
     var userId = "yy35578";
+
     if(!input) {
       console.log("username not entered");
     } else {
-      console.log("input in Login", input);
-      var path = "/chat/" + input;
-      this.state.userName = 
+      this.props.changeView('body', input, userId);
     }
   }
 
-    handleViewChange(viewName, userName, userId) {
-    this.setState({
-      view: viewName,
-      userName: userName,
-      userId: userId,
-      messages: [],
-      rooms: []
-    });
-  }
-
   render () {
-    var input = this.refs.userName ? this.refs.userName.value : 'annonymous';    
     return (
       <div className="bounding login">
         <form>
@@ -45,7 +33,7 @@ class Login extends React.Component {
             className="form-control item"
             id="user" /><br/>
  
-          <Link to={path}
+          <Link to='/chat'
             className="btn btn-primary item"
             onClick={e=> this.handleUsername(e)}>
             Join the DoorDash Chat!
