@@ -1,12 +1,4 @@
-# DoorDash Frontend Interview Project: Time: *3-6hrs*
-
-Thank you for reviewing my project. The project was built to apply for the Front-end enginner at Doordash. The front-end was built from scratch without any automated tools. The object was NOT to show a new and complete product, but to show skill sets.
-
-* MVP was updated to master branch
-* the development branch includes refactored codes for better performance.
-
-
-# React - redux - thunk chat app
+# React - redux - thunk chat app: Time: *5hrs*
 
 ### Dependancies
 * Framworks and servers related
